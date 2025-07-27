@@ -1,11 +1,12 @@
 {
-  "name": "finance-tracker-backend",
+  "name": "finance-tracker",
   "version": "1.0.0",
-  "description": "Backend API for Personal Finance Tracker",
+  "description": "Full Stack Personal Finance Tracker",
   "main": "dist/index.js",
   "scripts": {
-    "dev": "ts-node src/index.ts",
-    "dev:watch": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "ts-node src/index.ts",
+    "dev:frontend": "cd frontend && npm run dev",
     "build": "tsc",
     "start": "node dist/index.js",
     "seed": "ts-node src/utils/seedData.ts",
@@ -49,6 +50,7 @@
     "@types/pg": "^8.15.4",
     "@types/swagger-jsdoc": "^6.0.4",
     "@types/swagger-ui-express": "^4.1.6",
+    "concurrently": "^8.2.2",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.4.2"

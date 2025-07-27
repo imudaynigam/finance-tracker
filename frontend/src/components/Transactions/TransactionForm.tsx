@@ -246,10 +246,10 @@ const TransactionForm: React.FC<TransactionFormProps> = ({ transaction, onClose 
                 {isReadOnly ? 'Close' : 'Cancel'}
               </Button>
               {!isReadOnly && (
-                <Button type="submit" disabled={isSubmitting}>
-                  <Save className="h-4 w-4 mr-2" />
-                  {isSubmitting ? 'Saving...' : (transaction ? 'Update Transaction' : 'Add Transaction')}
-                </Button>
+              <Button type="submit" disabled={isSubmitting}>
+                <Save className="h-4 w-4 mr-2" />
+                {isSubmitting ? 'Saving...' : (transaction ? 'Update Transaction' : 'Add Transaction')}
+              </Button>
               )}
             </div>
           </form>

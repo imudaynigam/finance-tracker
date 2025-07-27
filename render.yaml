@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: finance-tracker-backend
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DB_TYPE
+        value: mysql
+      - key: JWT_SECRET
+        value: your-production-secret-key-here
+      - key: JWT_EXPIRES_IN
+        value: 24h
+    healthCheckPath: /api/health 
