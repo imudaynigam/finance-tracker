@@ -49,6 +49,7 @@ if (dbType === 'mysql') {
     entities: [User, Transaction, Category],
     migrations: ['src/migrations/*.ts'],
     subscribers: ['src/subscribers/*.ts'],
+    ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
     extra: {
       max: 20,
       connectionTimeoutMillis: 5000,
